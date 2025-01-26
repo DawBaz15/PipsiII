@@ -25,7 +25,6 @@
     </nav>
   </div>
 </header>
-
 <main class="container my-5">
   <h1 class="text-center text-white">Gallery</h1>
   <div class="row g-3">
@@ -41,17 +40,55 @@
       <img src="images/zlotoryja.jpg" class="img-fluid rounded gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" alt="Złotoryja">
       <p class="text-white mt-2">Złotoryja</p>
     </div>
+    <div class="col-md-4 text-center">
+      <img src="images/Legnica_-_Pomnik_Lwa.jpg" class="img-fluid rounded gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" alt="Legnica">
+      <p class="text-white mt-2">Legnica Pomnik</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="images/Wroclaw_kosciol_sw.Idziego_od_plKatedralnego.jpg" class="img-fluid rounded gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" alt="Wrocław">
+      <p class="text-white mt-2">Wrocław Kościuł</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="images/Kaczawa_w_Legnicy_(30-06-2009).jpg" class="img-fluid rounded gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" alt="Legnica">
+      <p class="text-white mt-2">Legnica Kaczawa</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="images/Kozi_staw,Legnica,Poland.jpg" class="img-fluid rounded gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" alt="Legnica">
+      <p class="text-white mt-2">Legnica Kozistaw</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="images/Złotoryja,_pozostałości_murów_obronnych_przy_ul._Pocztowej_i_Klasztornej,_widok_od_pd-zach..jpg" class="img-fluid rounded gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" alt="Złotoryja">
+      <p class="text-white mt-2">Złotoryja mury obrone</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="images/Lubin_Rynek_Ratusz.jpg" class="img-fluid rounded gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" alt="Lubin">
+      <p class="text-white mt-2">Lubin ratusz</p>
+    </div>
   </div>
 </main>
 
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        <img id="modalImage" src="" alt="Selected Image" class="img-fluid">
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" id="modalImage" class="img-fluid" alt="Image in modal">
+        </div>
       </div>
     </div>
   </div>
-</div>
-</body>
-</html>
+ </main>
+
+<script>
+  // JavaScript to update modal image source dynamically
+  const images = document.querySelectorAll('.gallery-image');
+  const modalImage = document.getElementById('modalImage');
+  images.forEach(image => {
+    image.addEventListener('click', () => {
+      modalImage.src = image.src;
+    });
+  });
+</script>
